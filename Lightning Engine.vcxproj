@@ -81,6 +81,7 @@
     <ClCompile Include="source\statemachine\GamePlayState.cpp" />
     <ClCompile Include="source\statemachine\GameState.cpp" />
     <ClCompile Include="source\statemachine\IStateMachine.cpp" />
+    <ClCompile Include="source\statemachine\SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\gameapp\GameApp.h" />
@@ -88,6 +89,7 @@
     <ClInclude Include="source\statemachine\GamePlayState.h" />
     <ClInclude Include="source\statemachine\GameState.h" />
     <ClInclude Include="source\statemachine\IStateMachine.h" />
+    <ClInclude Include="source\statemachine\SplashScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

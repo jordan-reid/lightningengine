@@ -45,7 +45,6 @@ private:
 	CGamePlayState* gamePlayState;
 
 
-
 	//Use a queue to track gamestates! This is a stack
 	//based statemachine
 	std::queue<CGameState*> stateStack;

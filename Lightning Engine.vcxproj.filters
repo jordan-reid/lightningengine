@@ -48,6 +48,9 @@
     <ClCompile Include="source\statemachine\GameState.cpp">
       <Filter>StateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="source\statemachine\SplashScreen.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h">
@@ -63,6 +66,9 @@
       <Filter>StateMachine</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\GameState.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\SplashScreen.h">
       <Filter>StateMachine</Filter>
     </ClInclude>
   </ItemGroup>
