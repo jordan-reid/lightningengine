@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{488accaa-3d16-4a52-8f49-9122677c2e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math Library">
+      <UniqueIdentifier>{54448da0-6f38-490b-8201-ff0346913c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math Library\2D Math">
+      <UniqueIdentifier>{c6f5adf5-790b-4f96-b713-aa1129abcc3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math Library\3D Math">
+      <UniqueIdentifier>{e2a039e6-849e-488d-b96a-3b06d12aecf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine">
+      <UniqueIdentifier>{36b6f05d-50a7-4047-8a0d-51554cec85d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameApp">
+      <UniqueIdentifier>{cc0a148f-892a-43e5-b697-e9eb8fecc229}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gameapp\GameApp.cpp">
+      <Filter>GameApp</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\IStateMachine.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\GamePlayState.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\GameState.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\mathLibrary\2DMath\vec2.h">
+      <Filter>Math Library\2D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gameapp\GameApp.h">
+      <Filter>GameApp</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\IStateMachine.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\GamePlayState.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\GameState.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
