@@ -17,6 +17,14 @@ public:
 	//This can be added to if necessary
 	enum GameStateType{GamePlayState, SplashScreenState, MainMenuState, LoadLevelState, CreditsState};
 
+	//Accessors
+	GameStateType GetGameStateType(void) {return gameStateType;};
+
+	//Mutators
+	void SetGameStateType(GameStateType _type) {gameStateType = _type;};
+
+	
+
 private:
 
 	GameStateType gameStateType;

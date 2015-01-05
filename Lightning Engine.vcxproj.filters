@@ -51,6 +51,15 @@
     <ClCompile Include="source\statemachine\SplashScreen.cpp">
       <Filter>StateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="source\statemachine\MainMenuState.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\LoadLevelState.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\CreditsState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h">
@@ -70,6 +79,15 @@
     </ClInclude>
     <ClInclude Include="source\statemachine\SplashScreen.h">
       <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\MainMenuState.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\LoadLevelState.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\CreditsState.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
