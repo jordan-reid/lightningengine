@@ -58,7 +58,7 @@
       <Filter>StateMachine</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\CreditsState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +87,7 @@
       <Filter>StateMachine</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\CreditsState.h">
-      <Filter>Header Files</Filter>
+      <Filter>StateMachine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
