@@ -31,6 +31,18 @@
     <Filter Include="GameApp">
       <UniqueIdentifier>{cc0a148f-892a-43e5-b697-e9eb8fecc229}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{c1658189-e9f1-47ff-a598-8e08b14bbf4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{e2f0616f-de1d-457c-9df7-e7a9ae947a0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Font Engine">
+      <UniqueIdentifier>{cccce4d8-85aa-4b9f-a456-52bfd834c784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture Manager">
+      <UniqueIdentifier>{a8d1994a-9a8b-4e0b-9c85-b3df483ac2bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
