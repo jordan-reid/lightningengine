@@ -1,4 +1,7 @@
-#pragma once
+#ifndef CCREDITSSTATE_H
+#define CCREDITSSTATE_H
+
+
 #include "gamestate.h"
 class CCreditsState : public CGameState
 {
@@ -12,4 +15,6 @@ public:
 	void Update(void);
 	void Render(void);
 };
+
+#endif
 

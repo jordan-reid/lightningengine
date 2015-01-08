@@ -1,4 +1,7 @@
-#pragma once
+#ifndef CSPLASHSCREEN_H
+#define CSPLASHSCREEN_H
+
+
 #include "gamestate.h"
 class CSplashScreen : public CGameState
 {
@@ -12,4 +15,6 @@ public:
 	void Update(void);
 	void Render(void);
 };
+
+#endif
 

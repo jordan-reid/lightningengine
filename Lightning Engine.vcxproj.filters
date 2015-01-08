@@ -60,6 +60,9 @@
     <ClCompile Include="source\statemachine\CreditsState.cpp">
       <Filter>StateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="source\renderer\Renderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="source\statemachine\CreditsState.h">
       <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\Renderer.h">
+      <Filter>Renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

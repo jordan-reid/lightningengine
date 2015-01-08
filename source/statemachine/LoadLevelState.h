@@ -1,4 +1,7 @@
-#pragma once
+#ifndef CLOADLEVELSTATE_H
+#define CLOADLEVELSTATE_H
+
+
 #include "gamestate.h"
 class CLoadLevelState : public CGameState
 {
@@ -12,4 +15,6 @@ public:
 	void Update(void);
 	void Render(void);
 };
+
+#endif
 

@@ -1,4 +1,7 @@
-#pragma once
+#ifndef CMAINMENUSTATE_H
+#define CMAINMENUSTATE_H
+
+
 #include "gamestate.h"
 class CMainMenuState : public CGameState
 {
@@ -12,4 +15,6 @@ public:
 	void Update(void);
 	void Render(void);
 };
+
+#endif
 

@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="source\gameapp\GameApp.cpp" />
     <ClCompile Include="source\main\main.cpp" />
+    <ClCompile Include="source\renderer\Renderer.cpp" />
     <ClCompile Include="source\statemachine\CreditsState.cpp" />
     <ClCompile Include="source\statemachine\GamePlayState.cpp" />
     <ClCompile Include="source\statemachine\GameState.cpp" />
@@ -89,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="source\gameapp\GameApp.h" />
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h" />
+    <ClInclude Include="source\renderer\Renderer.h" />
     <ClInclude Include="source\statemachine\CreditsState.h" />
     <ClInclude Include="source\statemachine\GamePlayState.h" />
     <ClInclude Include="source\statemachine\GameState.h" />
