@@ -1,4 +1,5 @@
 #include "Renderer.h"
+#include "RenderSet.h"
 
 
 CRenderer::CRenderer(void)
