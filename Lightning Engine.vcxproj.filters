@@ -43,6 +43,27 @@
     <Filter Include="Texture Manager">
       <UniqueIdentifier>{a8d1994a-9a8b-4e0b-9c85-b3df483ac2bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects\Player">
+      <UniqueIdentifier>{7d37f6e3-ed59-4219-8088-02a38ca20255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Static Objects">
+      <UniqueIdentifier>{527ae757-d1be-402f-9b98-ba67b431d476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Dynamic Objects">
+      <UniqueIdentifier>{45d77e5d-e779-4b21-b414-36d8e865917f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object Manager">
+      <UniqueIdentifier>{2b0b1e13-0ec7-43d8-98fb-e6d614ae0629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\A.I">
+      <UniqueIdentifier>{83e0d188-6346-4d58-8d70-08edf4ca6c9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Weapons">
+      <UniqueIdentifier>{62fdd385-da83-41b1-ba4f-1a64a87d6416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Object Interface">
+      <UniqueIdentifier>{d98986bc-9e21-42cd-97e4-2d4a40247328}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
@@ -79,7 +100,16 @@
       <Filter>Renderer</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\RenderShape.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Objects\ObjectManager\ObjectManager.cpp">
+      <Filter>Object Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\OptionsState.cpp">
+      <Filter>StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\PauseState.cpp">
+      <Filter>StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +147,16 @@
       <Filter>Renderer</Filter>
     </ClInclude>
     <ClInclude Include="source\renderer\RenderShape.h">
-      <Filter>Header Files</Filter>
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Objects\ObjectManager\ObjectManager.h">
+      <Filter>Object Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\OptionsState.h">
+      <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\PauseState.h">
+      <Filter>StateMachine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

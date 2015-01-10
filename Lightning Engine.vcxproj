@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="source\gameapp\GameApp.cpp" />
     <ClCompile Include="source\main\main.cpp" />
+    <ClCompile Include="source\Objects\ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="source\renderer\Renderer.cpp" />
     <ClCompile Include="source\renderer\RenderSet.cpp" />
     <ClCompile Include="source\renderer\RenderShape.cpp" />
@@ -87,11 +88,14 @@
     <ClCompile Include="source\statemachine\IStateMachine.cpp" />
     <ClCompile Include="source\statemachine\LoadLevelState.cpp" />
     <ClCompile Include="source\statemachine\MainMenuState.cpp" />
+    <ClCompile Include="source\statemachine\OptionsState.cpp" />
+    <ClCompile Include="source\statemachine\PauseState.cpp" />
     <ClCompile Include="source\statemachine\SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\gameapp\GameApp.h" />
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h" />
+    <ClInclude Include="source\Objects\ObjectManager\ObjectManager.h" />
     <ClInclude Include="source\renderer\Renderer.h" />
     <ClInclude Include="source\renderer\RenderSet.h" />
     <ClInclude Include="source\renderer\RenderShape.h" />
@@ -101,6 +105,8 @@
     <ClInclude Include="source\statemachine\IStateMachine.h" />
     <ClInclude Include="source\statemachine\LoadLevelState.h" />
     <ClInclude Include="source\statemachine\MainMenuState.h" />
+    <ClInclude Include="source\statemachine\OptionsState.h" />
+    <ClInclude Include="source\statemachine\PauseState.h" />
     <ClInclude Include="source\statemachine\SplashScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

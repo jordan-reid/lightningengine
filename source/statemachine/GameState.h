@@ -15,7 +15,7 @@ public:
 
 	//An Enumeration of all the possible states the game can be in.
 	//This can be added to if necessary
-	enum GameStateType{GamePlayState, SplashScreenState, MainMenuState, LoadLevelState, CreditsState};
+	enum GameStateType{GamePlayState, SplashScreenState, MainMenuState, LoadLevelState, CreditsState, OptionsState, PauseState};
 
 	//Accessors
 	GameStateType GetGameStateType(void) {return gameStateType;};
