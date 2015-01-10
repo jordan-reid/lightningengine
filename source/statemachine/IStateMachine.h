@@ -1,7 +1,7 @@
 #ifndef ISTATEMACHINE_H
 #define ISTATEMACHINE_H
 
-#include <queue>
+#include <stack>
 #include "GameState.h"
 
 //Forward declarations
@@ -20,7 +20,7 @@ class IStateMachine
 public:
 
 	IStateMachine(void);
-	virtual ~IStateMachine(void);
+	~IStateMachine(void);
 
 	bool Input(void);
 	void Update(void);
@@ -29,8 +29,17 @@ public:
 	void InitStateMachine();
 
 	//When a gamestate change is required, this function will be called
-	//To tell the IStateMachine class to change states.
+	//To tell the IStateMachine class to change states on its next update.
 	void ChangeState(CGameState::GameStateType _nextState);
+
+	void ChangeToGamePlayState();
+	void ChangeToCreditsState();
+	void ChangeToLoadLevelState();
+	void ChangeToMainMenuState();
+	void ChangeToOptionsState();
+	void ChangeToPauseState();
+
+
 
 	//Accessors
 	CGameState* GetCurrentState()		{return currentState;};
@@ -63,7 +72,7 @@ private:
 
 	//Use a queue to track gamestates! This is a stack
 	//based statemachine
-	std::queue<CGameState*> stateStack;
+	std::stack<CGameState*> stateStack;
 };
 
 #endif

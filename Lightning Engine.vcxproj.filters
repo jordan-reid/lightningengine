@@ -67,6 +67,9 @@
     <Filter Include="StateMachine">
       <UniqueIdentifier>{c6233552-0c3a-4fa3-9874-153c45657a90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Input Manager">
+      <UniqueIdentifier>{fdbdb821-a968-4359-b151-6d884c62e716}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
