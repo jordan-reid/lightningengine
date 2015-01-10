@@ -1,11 +1,18 @@
 #include "IStateMachine.h"
+#include "GamePlayState.h"
+#include "CreditsState.h"
+#include "LoadLevelState.h"
+#include "MainMenuState.h"
+#include "OptionsState.h"
+#include "PauseState.h"
+#include "SplashScreen.h"
 
 
 
 IStateMachine::IStateMachine(void)
 {
 	changeState		= false;
-	nextStateType	= CGameState::GameStateType::SplashScreenState;
+	nextStateType	= CGameState::GameStateType::MainMenuState;
 
 	currentState	= nullptr;
 	prevState		= nullptr;

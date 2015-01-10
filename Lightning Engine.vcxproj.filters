@@ -25,9 +25,6 @@
     <Filter Include="Math Library\3D Math">
       <UniqueIdentifier>{e2a039e6-849e-488d-b96a-3b06d12aecf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="StateMachine">
-      <UniqueIdentifier>{36b6f05d-50a7-4047-8a0d-51554cec85d7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameApp">
       <UniqueIdentifier>{cc0a148f-892a-43e5-b697-e9eb8fecc229}</UniqueIdentifier>
     </Filter>
@@ -64,6 +61,12 @@
     <Filter Include="Objects\Object Interface">
       <UniqueIdentifier>{d98986bc-9e21-42cd-97e4-2d4a40247328}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game States">
+      <UniqueIdentifier>{36b6f05d-50a7-4047-8a0d-51554cec85d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StateMachine">
+      <UniqueIdentifier>{c6233552-0c3a-4fa3-9874-153c45657a90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
@@ -72,26 +75,23 @@
     <ClCompile Include="source\gameapp\GameApp.cpp">
       <Filter>GameApp</Filter>
     </ClCompile>
-    <ClCompile Include="source\statemachine\IStateMachine.cpp">
-      <Filter>StateMachine</Filter>
-    </ClCompile>
     <ClCompile Include="source\statemachine\GamePlayState.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\GameState.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\SplashScreen.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\MainMenuState.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\LoadLevelState.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\CreditsState.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\renderer\Renderer.cpp">
       <Filter>Renderer</Filter>
@@ -106,9 +106,12 @@
       <Filter>Object Manager</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\OptionsState.cpp">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClCompile>
     <ClCompile Include="source\statemachine\PauseState.cpp">
+      <Filter>Game States</Filter>
+    </ClCompile>
+    <ClCompile Include="source\statemachine\IStateMachine.cpp">
       <Filter>StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -119,26 +122,23 @@
     <ClInclude Include="source\gameapp\GameApp.h">
       <Filter>GameApp</Filter>
     </ClInclude>
-    <ClInclude Include="source\statemachine\IStateMachine.h">
-      <Filter>StateMachine</Filter>
-    </ClInclude>
     <ClInclude Include="source\statemachine\GamePlayState.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\GameState.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\SplashScreen.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\MainMenuState.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\LoadLevelState.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\CreditsState.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\renderer\Renderer.h">
       <Filter>Renderer</Filter>
@@ -153,9 +153,12 @@
       <Filter>Object Manager</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\OptionsState.h">
-      <Filter>StateMachine</Filter>
+      <Filter>Game States</Filter>
     </ClInclude>
     <ClInclude Include="source\statemachine\PauseState.h">
+      <Filter>Game States</Filter>
+    </ClInclude>
+    <ClInclude Include="source\statemachine\IStateMachine.h">
       <Filter>StateMachine</Filter>
     </ClInclude>
   </ItemGroup>

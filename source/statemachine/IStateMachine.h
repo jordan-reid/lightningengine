@@ -2,7 +2,17 @@
 #define ISTATEMACHINE_H
 
 #include <queue>
-#include "GamePlayState.h"
+#include "GameState.h"
+
+//Forward declarations
+
+class CGamePlayState;
+class CCreditsState;
+class CLoadLevelState;
+class CMainMenuState;
+class COptionsState;
+class CPauseState;
+class CSplashScreen;
 
 class IStateMachine
 {
@@ -42,7 +52,13 @@ private:
 	bool changeState;
 
 	//All the states the StateMachine has to manage
-	CGamePlayState* gamePlayState;
+	CGamePlayState*		gamePlayState;
+	CCreditsState*		creditsState;
+	CLoadLevelState*	loadLevelState;
+	CMainMenuState*		mainMenuState;
+	COptionsState*		optionsState;
+	CPauseState*		pauseState;
+	CSplashScreen*		splashScreenState;
 
 
 	//Use a queue to track gamestates! This is a stack
