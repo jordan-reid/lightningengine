@@ -3,6 +3,7 @@
 
 CMainMenuState::CMainMenuState(void)
 {
+	SetGameStateType(MainMenuState);
 }
 
 

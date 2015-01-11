@@ -30,16 +30,7 @@ public:
 
 	//When a gamestate change is required, this function will be called
 	//To tell the IStateMachine class to change states on its next update.
-	void ChangeState(CGameState::GameStateType _nextState);
-
-	void ChangeToGamePlayState();
-	void ChangeToCreditsState();
-	void ChangeToLoadLevelState();
-	void ChangeToMainMenuState();
-	void ChangeToOptionsState();
-	void ChangeToPauseState();
-
-
+	void ChangeState(CGameState::GameStateType _nextState, bool _popState = false);
 
 	//Accessors
 	CGameState* GetCurrentState()		{return currentState;};
@@ -59,6 +50,7 @@ private:
 	CGameState* currentState, *prevState;
 	CGameState::GameStateType nextStateType;
 	bool changeState;
+	bool popState;
 
 	//All the states the StateMachine has to manage
 	CGamePlayState*		gamePlayState;

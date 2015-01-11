@@ -29,6 +29,7 @@ IStateMachine::~IStateMachine(void)
 void IStateMachine::InitStateMachine()
 {
 	changeState			= false;
+	popState			= false;
 	nextStateType		= CGameState::GameStateType::MainMenuState;
 
 	currentState		= splashScreenState;
@@ -68,80 +69,79 @@ void IStateMachine::Render(void)
 		stateStack.top()->Render();
 }
 
-void IStateMachine::ChangeState(CGameState::GameStateType _nextState)
+void IStateMachine::ChangeState(CGameState::GameStateType _nextState, bool _popState)
 {
 	nextStateType = _nextState;
 	changeState = true;
+	popState = _popState;
 }
 
 void IStateMachine::HandleStateChanging()
 {
-	switch (nextStateType)
+	if(popState)
 	{
+		prevState = stateStack.top();
+		stateStack.pop();
 
-	case CGameState::GameStateType::GamePlayState:
-		ChangeToGamePlayState();
-		break;
+		currentState = stateStack.top();
+	}
 
-	case CGameState::GameStateType::MainMenuState:
-		ChangeToMainMenuState();
-		break;
+	else
+	{
+		prevState = stateStack.top();
 
-	case CGameState::GameStateType::LoadLevelState:
-		ChangeToLoadLevelState();
-		break;
+		switch (nextStateType)
+		{
 
-	case CGameState::GameStateType::CreditsState:
-		ChangeToCreditsState();
-		break;
+		case CGameState::GameStateType::GamePlayState:
+			{
+				stateStack.push(gamePlayState);
+				currentState = gamePlayState;
+			}
+			break;
 
-	case CGameState::GameStateType::OptionsState:
-		ChangeToCreditsState();
-		break;
+		case CGameState::GameStateType::MainMenuState:
+			{
+				stateStack.push(mainMenuState);
+				currentState = mainMenuState;
+			}
+			break;
 
-	case CGameState::GameStateType::PauseState:
-		ChangeToPauseState();
-		break;
+		case CGameState::GameStateType::LoadLevelState:
+			{
+				stateStack.push(loadLevelState);
+				currentState = loadLevelState;
+			}
+			break;
 
-	default:
-		break;
+		case CGameState::GameStateType::CreditsState:
+			{
+				stateStack.push(creditsState);
+				currentState = creditsState;
+			}
+			break;
+
+		case CGameState::GameStateType::OptionsState:
+			{
+				stateStack.push(optionsState);
+				currentState = optionsState;
+			}
+			break;
+
+		case CGameState::GameStateType::PauseState:
+			stateStack.push(pauseState);
+			currentState = pauseState;
+			break;
+
+		default:
+			//This would be a great place to do a debug assert
+			//Trying to switch to a state that has not been set up yet.
+			break;
+		};
 	}
 
 	changeState = false;
+	popState = false;
 }
 
-void IStateMachine::ChangeToGamePlayState()
-{
-
-
-}
-
-void IStateMachine::ChangeToCreditsState()
-{
-
-
-}
-
-void IStateMachine::ChangeToLoadLevelState()
-{
-
-}
-
-void IStateMachine::ChangeToMainMenuState()
-{
-
-
-}
-
-void IStateMachine::ChangeToOptionsState()
-{
-
-
-}
-
-void IStateMachine::ChangeToPauseState()
-{
-
-
-}
 

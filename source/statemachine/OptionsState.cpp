@@ -3,6 +3,7 @@
 
 COptionsState::COptionsState(void)
 {
+	SetGameStateType(OptionsState);
 }
 
 

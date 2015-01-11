@@ -1,6 +1,9 @@
 #include "GameApp.h"
 #include "../statemachine/IStateMachine.h"
 
+//TESTING STATEMACHINE!!
+#include "../statemachine/GameState.h"
+
 
 
 GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)

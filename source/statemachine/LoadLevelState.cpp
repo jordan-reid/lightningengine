@@ -3,6 +3,7 @@
 
 CLoadLevelState::CLoadLevelState(void)
 {
+	SetGameStateType(LoadLevelState);
 }
 
 

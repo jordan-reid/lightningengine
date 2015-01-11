@@ -3,6 +3,7 @@
 
 CSplashScreen::CSplashScreen(void)
 {
+	SetGameStateType(SplashScreenState);
 }
 
 

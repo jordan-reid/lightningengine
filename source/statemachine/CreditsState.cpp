@@ -3,6 +3,7 @@
 
 CCreditsState::CCreditsState(void)
 {
+	SetGameStateType(CreditsState);
 }
 
 

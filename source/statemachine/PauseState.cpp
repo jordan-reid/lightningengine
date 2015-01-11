@@ -3,6 +3,7 @@
 
 CPauseState::CPauseState(void)
 {
+	SetGameStateType(PauseState);
 }
 
 

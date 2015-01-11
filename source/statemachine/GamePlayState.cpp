@@ -3,6 +3,7 @@
 
 CGamePlayState::CGamePlayState(void)
 {
+	SetGameStateType(GamePlayState);
 }
 
 
