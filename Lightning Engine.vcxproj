@@ -96,6 +96,7 @@
     <ClInclude Include="source\gameapp\GameApp.h" />
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h" />
     <ClInclude Include="source\Objects\ObjectManager\ObjectManager.h" />
+    <ClInclude Include="source\renderer\D3D11Includes.h" />
     <ClInclude Include="source\renderer\Renderer.h" />
     <ClInclude Include="source\renderer\RenderSet.h" />
     <ClInclude Include="source\renderer\RenderShape.h" />

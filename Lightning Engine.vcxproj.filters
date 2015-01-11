@@ -70,6 +70,9 @@
     <Filter Include="Input Manager">
       <UniqueIdentifier>{fdbdb821-a968-4359-b151-6d884c62e716}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renderer\D3D11 Includes">
+      <UniqueIdentifier>{00b35a8e-6fd4-4d90-84e8-0d1b27d08b34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="source\statemachine\IStateMachine.h">
       <Filter>StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="source\renderer\D3D11Includes.h">
+      <Filter>Renderer\D3D11 Includes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
