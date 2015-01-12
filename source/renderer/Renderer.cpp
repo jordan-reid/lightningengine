@@ -5,7 +5,7 @@
 
 #include "../gameapp/GameApp.h"
 
-#define SAFE_RELEASE(p) {if ((p)) {(p)->Release(); (p) = nullptr;}}
+
 
 
 CRenderer::CRenderer(void)
@@ -87,6 +87,12 @@ bool CRenderer::InitD3D(HWND _window)
 
 
 	return true;
+}
+
+void CRenderer::Render(CRenderSet* _renderSet)
+{
+
+
 }
 
 void CRenderer::ShutDown()

@@ -3,6 +3,8 @@
 
 #include "D3D11Includes.h"
 
+class CRenderSet;
+
 class CRenderer
 {
 
@@ -14,6 +16,8 @@ public:
 	bool InitD3D(HWND _window);
 	void ShutDown();
 
+	void Render(CRenderSet* _renderSet);
+
 private:
 
 	ID3D11Device*			device;
@@ -23,7 +27,6 @@ private:
 	ID3D11Resource*			backBuffer;
 	ID3D11Texture2D*		zBuffer;
 	ID3D11RenderTargetView* renderTargetView;
-
 };
 
 #endif
