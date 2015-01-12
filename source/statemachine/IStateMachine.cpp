@@ -18,13 +18,7 @@ IStateMachine::IStateMachine(void)
 
 IStateMachine::~IStateMachine(void)
 {
-	delete gamePlayState;
-	delete creditsState;
-	delete loadLevelState;
-	delete mainMenuState;
-	delete optionsState;
-	delete pauseState;
-	delete splashScreenState;
+	ShutDown();
 }
 
 void IStateMachine::InitStateMachine()
@@ -145,6 +139,21 @@ void IStateMachine::HandleStateChanging()
 
 	changeState = false;
 	popState = false;
+}
+
+void IStateMachine::ShutDown()
+{
+	delete gamePlayState;
+	delete creditsState;
+	delete loadLevelState;
+	delete mainMenuState;
+	delete optionsState;
+	delete pauseState;
+	delete splashScreenState;
+
+
+	delete renderer;
+	renderer = nullptr;
 }
 
 

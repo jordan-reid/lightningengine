@@ -19,7 +19,7 @@ private:
 	ID3D11Device*			device;
 	ID3D11DeviceContext*	deviceContext;
 	IDXGISwapChain*			swapChain;
-	D3D11_VIEWPORT*			viewPort;
+	D3D11_VIEWPORT			viewPort;
 	ID3D11Resource*			backBuffer;
 	ID3D11Texture2D*		zBuffer;
 	ID3D11RenderTargetView* renderTargetView;

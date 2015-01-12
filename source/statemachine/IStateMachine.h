@@ -28,6 +28,7 @@ public:
 	void Render(void);
 
 	void InitStateMachine();
+	void ShutDown();
 
 	//When a gamestate change is required, this function will be called
 	//To tell the IStateMachine class to change states on its next update.

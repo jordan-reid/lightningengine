@@ -1,5 +1,7 @@
 #include "Renderer.h"
 #include "RenderSet.h"
+#include "iostream"
+#include <cassert>
 
 #include "../gameapp/GameApp.h"
 
@@ -13,19 +15,13 @@ CRenderer::CRenderer(void)
 
 CRenderer::~CRenderer(void)
 {
+	ShutDown();
 }
 
 bool CRenderer::InitD3D(HWND _window)
-{
-	/*
-	ID3D11Device*			device;
-	ID3D11DeviceContext*	deviceContext;
-	IDXGISwapChain*			swapChain;
-	D3D11_VIEWPORT*			viewPort;
-	ID3D11Resource*			backBuffer;
-	ID3D11Texture2D*		zBuffer;
-	ID3D11RenderTargetView* renderTargetView;
-	*/
+{	
+	//Might not need a ZBuffer since this is a 2D game
+	//ID3D11Texture2D*		zBuffer;	
 
 	D3D_FEATURE_LEVEL featureLevels[1];
 	featureLevels[0] = D3D_FEATURE_LEVEL_11_0;
@@ -45,23 +41,58 @@ bool CRenderer::InitD3D(HWND _window)
 	swapDesc.OutputWindow		= _window;
 	swapDesc.Windowed			= true;
 
-//NEED TO CATCH AN HRESULT AND DEBUG ASSERT IF IT FAILED!!!
+	HRESULT hr;
+
 #if(_DEBUG)
 	{
-		D3D11CreateDeviceAndSwapChain(nullptr,D3D_DRIVER_TYPE_HARDWARE,nullptr,D3D11_CREATE_DEVICE_DEBUG,
+		hr = D3D11CreateDeviceAndSwapChain(nullptr,D3D_DRIVER_TYPE_HARDWARE,nullptr,D3D11_CREATE_DEVICE_DEBUG,
 			featureLevels,1,D3D11_SDK_VERSION,&swapDesc,&swapChain,&device,&feature,&deviceContext);
 	}
 #else
 	{
-			D3D11CreateDeviceAndSwapChain(nullptr,D3D_DRIVER_TYPE_HARDWARE,nullptr, NULL,features,1,D3D11_SDK_VERSION,&swapDESC,&swapChain,&device,&feature,&devicecontext);
+		hr = D3D11CreateDeviceAndSwapChain(nullptr,D3D_DRIVER_TYPE_HARDWARE,nullptr, NULL,
+			featureLevels,1,D3D11_SDK_VERSION,&swapDesc,&swapChain,&device,&feature,&deviceContext);
 	}
 #endif
+
+	if(FAILED(hr))
+	{
+		assert(FAILED(hr) && "D3D11CreateDeviceAndSwapChain() in Renderer.cpp");
+
+		return false;
+	}
+
+	hr = swapChain->GetBuffer(0,__uuidof(backBuffer),reinterpret_cast<void**>(&backBuffer));
+
+	if(FAILED(hr))
+	{
+		assert(FAILED(hr) && "swapChain->GetBuffer() in Renderer.cpp");
+		return false;
+	}
+
+	hr = device->CreateRenderTargetView(backBuffer,nullptr,&renderTargetView);
+
+	if(FAILED(hr))
+	{
+		assert(FAILED(hr) && "device->CreateRenderTargetView() in Renderer.cpp");
+		return false;
+	}
+
+	viewPort.TopLeftX = 0;
+	viewPort.TopLeftY = 0;
+	viewPort.Width    = WINDOW_WIDTH;
+	viewPort.Height   = WINDOW_HEIGHT;
+	viewPort.MinDepth = 0;
+	viewPort.MaxDepth = 1;
+
 
 	return true;
 }
 
 void CRenderer::ShutDown()
 {
+	SAFE_RELEASE(renderTargetView);
+	SAFE_RELEASE(backBuffer);
 	SAFE_RELEASE(swapChain);
 	SAFE_RELEASE(deviceContext);
 	SAFE_RELEASE(device);

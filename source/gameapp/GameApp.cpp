@@ -101,7 +101,8 @@ bool GameApp::Run(void)
 
 bool GameApp::ShutDown(void)
 {
-	StateMachine->GetRenderer()->ShutDown();
+	delete StateMachine;
+	StateMachine = nullptr;
 
 	return true;
 }
