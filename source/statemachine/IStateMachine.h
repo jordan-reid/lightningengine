@@ -13,6 +13,7 @@ class CMainMenuState;
 class COptionsState;
 class CPauseState;
 class CSplashScreen;
+class CRenderer;
 
 class IStateMachine
 {
@@ -33,10 +34,11 @@ public:
 	void ChangeState(CGameState::GameStateType _nextState, bool _popState = false);
 
 	//Accessors
-	CGameState* GetCurrentState()		{return currentState;};
-	CGameState* GetPrevState()			{return prevState;};
+	CGameState* GetCurrentState()						{return currentState;};
+	CGameState* GetPrevState()							{return prevState;};
 
 	CGameState::GameStateType  GetNextStateType()		{return nextStateType;};
+	CRenderer* GetRenderer(void)						{return renderer;};
 
 	//NO MUTATORS!!!!!
 	//We don't want anything but the IStateMachine class
@@ -65,6 +67,9 @@ private:
 	//Use a queue to track gamestates! This is a stack
 	//based statemachine
 	std::stack<CGameState*> stateStack;
+
+	//A reference to the games renderer
+	CRenderer* renderer;
 };
 
 #endif

@@ -4,6 +4,9 @@
 #include <Windows.h>
 #include <tchar.h>
 
+#define WINDOW_WIDTH 1920
+#define WINDOW_HEIGHT 1440
+
 class IStateMachine;
 
 class GameApp
@@ -17,6 +20,7 @@ public:
 	//Gets
 	bool GetRunApp(void) {return runApp;};
 	IStateMachine* GetStateMAchine() {return StateMachine;};
+	const HWND GetGameWindow(void) {return window;};
 
 
 	//Sets

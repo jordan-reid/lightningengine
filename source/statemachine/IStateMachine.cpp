@@ -6,6 +6,7 @@
 #include "OptionsState.h"
 #include "PauseState.h"
 #include "SplashScreen.h"
+#include "../renderer/Renderer.h"
 
 
 
@@ -44,6 +45,8 @@ void IStateMachine::InitStateMachine()
 	splashScreenState	= new CSplashScreen();
 
 	stateStack.push(splashScreenState);
+
+	renderer = new CRenderer();
 }
 
 bool IStateMachine::Input(void)

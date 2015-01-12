@@ -26,6 +26,8 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,i
 		}
 	}
 
+	gameapp.ShutDown();
+
 	return (int) msg.wParam;
 }
 

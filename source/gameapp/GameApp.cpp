@@ -1,10 +1,6 @@
 #include "GameApp.h"
 #include "../statemachine/IStateMachine.h"
-
-//TESTING STATEMACHINE!!
-#include "../statemachine/GameState.h"
-
-
+#include "../renderer/Renderer.h"
 
 GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
 {
@@ -56,7 +52,7 @@ GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
 		szTitle,
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, CW_USEDEFAULT,
-		1920, 1440,
+		WINDOW_WIDTH, WINDOW_HEIGHT,
 		NULL,
 		NULL,
 		_hinst,
@@ -83,6 +79,9 @@ GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
 	runApp = true;
 	StateMachine = new IStateMachine();
 	StateMachine->InitStateMachine();
+
+	//Init D3D here
+	StateMachine->GetRenderer()->InitD3D(window);	
 }
 
 
@@ -102,6 +101,8 @@ bool GameApp::Run(void)
 
 bool GameApp::ShutDown(void)
 {
+	StateMachine->GetRenderer()->ShutDown();
+
 	return true;
 }
 

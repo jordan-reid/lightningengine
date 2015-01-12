@@ -11,15 +11,19 @@ public:
 	CRenderer(void);
 	~CRenderer(void);
 
+	bool InitD3D(HWND _window);
+	void ShutDown();
+
 private:
 
+	ID3D11Device*			device;
+	ID3D11DeviceContext*	deviceContext;
+	IDXGISwapChain*			swapChain;
 	D3D11_VIEWPORT*			viewPort;
 	ID3D11Resource*			backBuffer;
 	ID3D11Texture2D*		zBuffer;
-	IDXGISwapChain*			swapChain;
 	ID3D11RenderTargetView* renderTargetView;
-	ID3D11Device*			device;
-	ID3D11DeviceContext*	deviceContext;
+
 };
 
 #endif
