@@ -120,6 +120,9 @@
     <ClCompile Include="source\statemachine\IStateMachine.cpp">
       <Filter>StateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="source\InputManager\InputManager.cpp">
+      <Filter>Input Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="source\renderer\D3D11Includes.h">
       <Filter>Renderer\D3D11 Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\InputManager\InputManager.h">
+      <Filter>Input Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

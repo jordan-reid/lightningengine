@@ -4,8 +4,8 @@
 #include <Windows.h>
 #include <tchar.h>
 
-#define WINDOW_WIDTH 1920
-#define WINDOW_HEIGHT 1440
+#define WINDOW_WIDTH  1024    //1920
+#define WINDOW_HEIGHT 1024    //1440
 
 class IStateMachine;
 

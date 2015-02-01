@@ -1,7 +1,7 @@
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
 #include <vld.h>
+
 #include "../gameapp/GameApp.h"
 
 
@@ -49,24 +49,39 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	switch (message)
 	{
+
 	case WM_PAINT:
-		hdc = BeginPaint(hWnd, &ps);
+		{
+			hdc = BeginPaint(hWnd, &ps);
 
-		// Here your application is laid out.
-		// For this introduction, we just print out "Hello, World!"
-		// in the top left corner.
-		TextOut(hdc,
-			5, 5,
-			greeting, _tcslen(greeting));
-		// End application-specific layout section.
+			// Here your application is laid out.
+			// For this introduction, we just print out "Hello, World!"
+			// in the top left corner.
+			TextOut(hdc,
+				5, 5,
+				greeting, _tcslen(greeting));
+			// End application-specific layout section.
 
-		EndPaint(hWnd, &ps);
+			EndPaint(hWnd, &ps);
+		}
 		break;
+
+	case WM_KEYDOWN:
+		{
+			int i = 0;
+		}
+		break;
+
 	case WM_DESTROY:
-		PostQuitMessage(0);
+		{
+			PostQuitMessage(0);
+		}
 		break;
+
 	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
+		{
+			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
 		break;
 	}
 
