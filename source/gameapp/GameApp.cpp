@@ -1,6 +1,7 @@
 #include "GameApp.h"
 #include "../statemachine/IStateMachine.h"
 #include "../renderer/Renderer.h"
+#include "../InputManager/InputManager.h"
 
 GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
 {
@@ -81,7 +82,8 @@ GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
 	StateMachine->InitStateMachine();
 
 	//Init D3D here
-	StateMachine->GetRenderer()->InitD3D(window);	
+	StateMachine->GetRenderer()->InitD3D(window);
+	InputManager = new CInputManager();
 }
 
 
@@ -91,7 +93,7 @@ GameApp::~GameApp(void)
 
 bool GameApp::Run(void)
 {
-	runApp = StateMachine->Input();
+	runApp = StateMachine->Input(InputManager);
 	StateMachine->Update();
 	StateMachine->Render();
 
@@ -103,6 +105,9 @@ bool GameApp::ShutDown(void)
 {
 	delete StateMachine;
 	StateMachine = nullptr;
+
+	delete InputManager;
+	InputManager = nullptr;
 
 	return true;
 }

@@ -7,6 +7,7 @@
 #include "PauseState.h"
 #include "SplashScreen.h"
 #include "../renderer/Renderer.h"
+#include "../InputManager/InputManager.h"
 
 
 
@@ -43,10 +44,10 @@ void IStateMachine::InitStateMachine()
 	renderer = new CRenderer();
 }
 
-bool IStateMachine::Input(void)
+bool IStateMachine::Input(CInputManager* _InputManager)
 {
 	if(stateStack.size() != 0)
-		return stateStack.top()->Input();
+		return stateStack.top()->Input(_InputManager);
 
 	return true;
 }

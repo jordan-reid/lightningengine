@@ -1,4 +1,5 @@
 #include "LoadLevelState.h"
+#include "../InputManager/InputManager.h"
 
 
 CLoadLevelState::CLoadLevelState(void)
@@ -11,7 +12,7 @@ CLoadLevelState::~CLoadLevelState(void)
 {
 }
 
-bool CLoadLevelState::Input(void)
+bool CLoadLevelState::Input(CInputManager* _inputManager)
 {
 	return true;
 }

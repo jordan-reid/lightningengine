@@ -8,6 +8,7 @@
 #define WINDOW_HEIGHT 1024    //1440
 
 class IStateMachine;
+class CInputManager;
 
 class GameApp
 {
@@ -38,6 +39,7 @@ private:
 	HWND      window;
 
 	IStateMachine* StateMachine;
+	CInputManager* InputManager;
 
 	bool runApp;
 };

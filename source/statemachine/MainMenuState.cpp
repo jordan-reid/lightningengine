@@ -1,4 +1,5 @@
 #include "MainMenuState.h"
+#include "../InputManager/InputManager.h"
 
 
 CMainMenuState::CMainMenuState(void)
@@ -11,7 +12,7 @@ CMainMenuState::~CMainMenuState(void)
 {
 }
 
-bool CMainMenuState::Input(void)
+bool CMainMenuState::Input(CInputManager* _inputManager)
 {
 
 	return true;

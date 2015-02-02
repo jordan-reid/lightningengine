@@ -68,7 +68,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	case WM_KEYDOWN:
 		{
-			int i = 0;
+			GetAsyncKeyState(wParam);
 		}
 		break;
 

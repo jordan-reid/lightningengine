@@ -1,4 +1,5 @@
 #include "SplashScreen.h"
+#include "../InputManager/InputManager.h"
 
 
 CSplashScreen::CSplashScreen(void)
@@ -11,7 +12,7 @@ CSplashScreen::~CSplashScreen(void)
 {
 }
 
-bool CSplashScreen::Input(void)
+bool CSplashScreen::Input(CInputManager* _inputManager)
 {
 	return true;
 }

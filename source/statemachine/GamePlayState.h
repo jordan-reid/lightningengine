@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 
+class CInputManager;
 
 class CGamePlayState : public CGameState
 {
@@ -12,7 +13,7 @@ public:
 	CGamePlayState(void);
 	~CGamePlayState(void);
 
-	bool Input(void);
+	bool Input(CInputManager* _inputManager);
 	void Update(void);
 	void Render(void);
 

@@ -1,6 +1,8 @@
 #ifndef CGAMESTATE_H
 #define CGAMESTATE_H
 
+class CInputManager;
+
 class CGameState
 {
 
@@ -9,7 +11,7 @@ public:
 	CGameState(void);
 	virtual ~CGameState(void);
 
-	virtual bool Input(void);
+	virtual bool Input(CInputManager* _inputManager);
 	virtual void Update(void);
 	virtual void Render(void);
 

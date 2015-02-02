@@ -10,6 +10,11 @@ public:
 
 	CPauseState(void);
 	~CPauseState(void);
+
+	bool Input(CInputManager* _inputManager);
+	void Update(void);
+	void Render(void);
+
 };
 
 #endif

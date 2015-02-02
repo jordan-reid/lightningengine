@@ -1,4 +1,5 @@
 #include "GamePlayState.h"
+#include "../InputManager/InputManager.h"
 
 
 CGamePlayState::CGamePlayState(void)
@@ -11,7 +12,7 @@ CGamePlayState::~CGamePlayState(void)
 {
 }
 
-bool CGamePlayState::Input(void)
+bool CGamePlayState::Input(CInputManager* _inputManager)
 {
 
 	return true;

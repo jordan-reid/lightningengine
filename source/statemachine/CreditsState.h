@@ -3,6 +3,9 @@
 
 
 #include "gamestate.h"
+
+class CInputManager;
+
 class CCreditsState : public CGameState
 {
 
@@ -11,7 +14,7 @@ public:
 	CCreditsState(void);
 	~CCreditsState(void);
 
-	bool Input(void);
+	bool Input(CInputManager* _inputManager);
 	void Update(void);
 	void Render(void);
 };

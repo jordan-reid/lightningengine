@@ -14,6 +14,7 @@ class COptionsState;
 class CPauseState;
 class CSplashScreen;
 class CRenderer;
+class CInputManager;
 
 class IStateMachine
 {
@@ -23,7 +24,7 @@ public:
 	IStateMachine(void);
 	~IStateMachine(void);
 
-	bool Input(void);
+	bool Input(CInputManager* _InputManager);
 	void Update(void);
 	void Render(void);
 
@@ -69,8 +70,8 @@ private:
 	//based statemachine
 	std::stack<CGameState*> stateStack;
 
-	//A reference to the games renderer
-	CRenderer* renderer;
+	CRenderer*		renderer;
+	CInputManager*  InputManager;
 };
 
 #endif

@@ -10,6 +10,11 @@ public:
 
 	COptionsState(void);
 	~COptionsState(void);
+
+	virtual bool Input(CInputManager* _inputManager);
+	virtual void Update(void);
+	virtual void Render(void);
+
 };
 
 #endif

@@ -1,4 +1,5 @@
 #include "CreditsState.h"
+#include "../InputManager/InputManager.h"
 
 
 CCreditsState::CCreditsState(void)
@@ -12,9 +13,8 @@ CCreditsState::~CCreditsState(void)
 }
 
 
-bool CCreditsState::Input(void)
+bool CCreditsState::Input(CInputManager* _inputManager)
 {
-
 	return true;
 }
 
