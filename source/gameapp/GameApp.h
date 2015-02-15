@@ -15,18 +15,20 @@ class GameApp
 
 public:
 
-	GameApp(HINSTANCE _hinst, WNDPROC _wndProc);
-	~GameApp(void);
+	GameApp(void) {};
+	~GameApp(void) {};
+
+	bool Init(HINSTANCE _hinst, WNDPROC _wndProc);
 
 	//Gets
-	bool GetRunApp(void) {return runApp;};
-	IStateMachine* GetStateMAchine() {return StateMachine;};
-	const HWND GetGameWindow(void) {return window;};
+	 bool GetRunApp					(void)	{return runApp;};
+	 HWND GetGameWindow				(void)	{return window;};
+	 IStateMachine* GetStateMAchine	(void)	{return StateMachine;};
+	 CInputManager* GetInputManager	(void)	{return InputManager;};
 
 
 	//Sets
 	void SetRunApp(bool _runApp) {runApp = _runApp;};
-	void SetStateMAchine(IStateMachine* _stateMachine) { StateMachine = _stateMachine;};
 
 
 	bool Run(void);

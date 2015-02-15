@@ -3,7 +3,8 @@
 #include "../renderer/Renderer.h"
 #include "../InputManager/InputManager.h"
 
-GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
+
+bool GameApp::Init(HINSTANCE _hinst, WNDPROC _wndProc)
 {
 	// The main window class name.
 	static TCHAR szWindowClass[] = _T("Lightning Engine");
@@ -84,11 +85,8 @@ GameApp::GameApp(HINSTANCE _hinst, WNDPROC _wndProc)
 	//Init D3D here
 	StateMachine->GetRenderer()->InitD3D(window);
 	InputManager = new CInputManager();
-}
 
-
-GameApp::~GameApp(void)
-{
+	return true;
 }
 
 bool GameApp::Run(void)

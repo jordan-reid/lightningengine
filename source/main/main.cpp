@@ -3,7 +3,9 @@
 #include <vld.h>
 
 #include "../gameapp/GameApp.h"
+#include "../InputManager/InputManager.h"
 
+GameApp gameapp;
 
 // Forward declarations of functions included in this code module:
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -12,7 +14,8 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,i
 {
 	srand(unsigned int(time(0)));
 
-	GameApp gameapp(hInstance,(WNDPROC)WndProc);
+	gameapp.Init(hInstance,(WNDPROC)WndProc);
+
 
 	// Main message loop:
 	MSG msg; 
@@ -68,7 +71,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	case WM_KEYDOWN:
 		{
-			GetAsyncKeyState(wParam);
+			gameapp.GetInputManager()->OnKeyDown(wParam);
+		}
+		break;
+
+	case WM_KEYUP:
+		{
+			gameapp.GetInputManager()->OnKeyUp(wParam);
 		}
 		break;
 
