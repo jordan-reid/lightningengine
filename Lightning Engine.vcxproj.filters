@@ -73,6 +73,9 @@
     <Filter Include="Renderer\D3D11 Includes">
       <UniqueIdentifier>{00b35a8e-6fd4-4d90-84e8-0d1b27d08b34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HLSL Shaders">
+      <UniqueIdentifier>{adf6c12f-d722-4f6d-b0e3-c556c571108a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
@@ -176,5 +179,16 @@
     <ClInclude Include="source\InputManager\InputManager.h">
       <Filter>Input Manager</Filter>
     </ClInclude>
+    <ClInclude Include="source\mathLibrary\3DMath\vec3.h">
+      <Filter>Math Library\3D Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="source\shaders\PrimaryVS.hlsl">
+      <Filter>HLSL Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="source\shaders\PrimaryPS.hlsl">
+      <Filter>HLSL Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

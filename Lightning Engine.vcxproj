@@ -97,6 +97,7 @@
     <ClInclude Include="source\gameapp\GameApp.h" />
     <ClInclude Include="source\InputManager\InputManager.h" />
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h" />
+    <ClInclude Include="source\mathLibrary\3DMath\vec3.h" />
     <ClInclude Include="source\Objects\ObjectManager\ObjectManager.h" />
     <ClInclude Include="source\renderer\D3D11Includes.h" />
     <ClInclude Include="source\renderer\Renderer.h" />
@@ -111,6 +112,16 @@
     <ClInclude Include="source\statemachine\OptionsState.h" />
     <ClInclude Include="source\statemachine\PauseState.h" />
     <ClInclude Include="source\statemachine\SplashScreen.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="source\shaders\PrimaryPS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="source\shaders\PrimaryVS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
