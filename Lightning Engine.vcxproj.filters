@@ -76,6 +76,9 @@
     <Filter Include="HLSL Shaders">
       <UniqueIdentifier>{adf6c12f-d722-4f6d-b0e3-c556c571108a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game State Factory">
+      <UniqueIdentifier>{a0e742de-6d28-4cf8-a2db-f0c4502ad60f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main\main.cpp">
@@ -125,6 +128,9 @@
     </ClCompile>
     <ClCompile Include="source\InputManager\InputManager.cpp">
       <Filter>Input Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\factories\gameStateFactory\GameStateFactory.cpp">
+      <Filter>Game State Factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="source\mathLibrary\3DMath\vec3.h">
       <Filter>Math Library\3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="source\factories\gameStateFactory\GameStateFactory.h">
+      <Filter>Game State Factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

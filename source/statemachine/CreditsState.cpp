@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------//
+//File Name: CreditsState.cpp									 //
+//																 //
+//Author: Jordan Reid											 //
+//																 //
+//Purpose: House the implementation for the credits state		 //																										
+//---------------------------------------------------------------//
+///////////////////////////////////////////////////////////////////
+
 #include "CreditsState.h"
 #include "../InputManager/InputManager.h"
 
@@ -26,6 +36,5 @@ void CCreditsState::Update(void)
 
 void CCreditsState::Render(void)
 {
-
 
 }

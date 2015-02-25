@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\factories\gameStateFactory\GameStateFactory.cpp" />
     <ClCompile Include="source\gameapp\GameApp.cpp" />
     <ClCompile Include="source\InputManager\InputManager.cpp" />
     <ClCompile Include="source\main\main.cpp" />
@@ -94,6 +95,7 @@
     <ClCompile Include="source\statemachine\SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\factories\gameStateFactory\GameStateFactory.h" />
     <ClInclude Include="source\gameapp\GameApp.h" />
     <ClInclude Include="source\InputManager\InputManager.h" />
     <ClInclude Include="source\mathLibrary\2DMath\vec2.h" />
