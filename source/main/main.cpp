@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-#include <vld.h>
+//#include <vld.h>
 
 #include "../gameapp/GameApp.h"
 #include "../InputManager/InputManager.h"

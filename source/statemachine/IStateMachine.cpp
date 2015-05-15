@@ -8,6 +8,7 @@
 #include "SplashScreen.h"
 #include "../renderer/Renderer.h"
 #include "../InputManager/InputManager.h"
+#include "../factories/gameStateFactory/GameStateFactory.h"
 
 
 
@@ -24,29 +25,23 @@ IStateMachine::~IStateMachine(void)
 
 void IStateMachine::InitStateMachine()
 {
-	changeState			= false;
-	popState			= false;
-	nextStateType		= CGameState::GameStateType::MainMenuState;
+	changeState = false;
+	popState = false;
+	nextStateType = CGameState::GameStateType::MainMenuState;
 
-	currentState		= splashScreenState;
-	prevState			= nullptr;
+	gameStateFactory = new CGameStateFactory();
+	gameStateFactory->InitGameStates();
 
-	gamePlayState		= new CGamePlayState();
-	creditsState		= new CCreditsState();
-	loadLevelState		= new CLoadLevelState();
-	mainMenuState		= new CMainMenuState();
-	optionsState		= new COptionsState();
-	pauseState			= new CPauseState();
-	splashScreenState	= new CSplashScreen();
+	stateStack.push(gameStateFactory->getGameState(CGameState::SplashScreenState));
 
-	stateStack.push(splashScreenState);
+	prevState = nullptr;
 
 	renderer = new CRenderer();
 }
 
 bool IStateMachine::Input(CInputManager* _InputManager)
 {
-	if(stateStack.size() != 0)
+	if (stateStack.size() != 0)
 		return stateStack.top()->Input(_InputManager);
 
 	return true;
@@ -54,16 +49,20 @@ bool IStateMachine::Input(CInputManager* _InputManager)
 
 void IStateMachine::Update(void)
 {
-	if(stateStack.size() != 0)
+
+	if (GetAsyncKeyState('A'))
+		ChangeState(CGameState::GamePlayState, false);
+
+	if (stateStack.size() != 0)
 		stateStack.top()->Update();
 
-	if(changeState)
+	if (changeState)
 		HandleStateChanging();
 }
 
 void IStateMachine::Render(void)
 {
-	if(stateStack.size() != 0)
+	if (stateStack.size() != 0)
 		stateStack.top()->Render();
 }
 
@@ -74,9 +73,10 @@ void IStateMachine::ChangeState(CGameState::GameStateType _nextState, bool _popS
 	popState = _popState;
 }
 
+
 void IStateMachine::HandleStateChanging()
 {
-	if(popState)
+	if (popState)
 	{
 		prevState = stateStack.top();
 		stateStack.pop();
@@ -87,55 +87,7 @@ void IStateMachine::HandleStateChanging()
 	else
 	{
 		prevState = stateStack.top();
-
-		switch (nextStateType)
-		{
-
-		case CGameState::GameStateType::GamePlayState:
-			{
-				stateStack.push(gamePlayState);
-				currentState = gamePlayState;
-			}
-			break;
-
-		case CGameState::GameStateType::MainMenuState:
-			{
-				stateStack.push(mainMenuState);
-				currentState = mainMenuState;
-			}
-			break;
-
-		case CGameState::GameStateType::LoadLevelState:
-			{
-				stateStack.push(loadLevelState);
-				currentState = loadLevelState;
-			}
-			break;
-
-		case CGameState::GameStateType::CreditsState:
-			{
-				stateStack.push(creditsState);
-				currentState = creditsState;
-			}
-			break;
-
-		case CGameState::GameStateType::OptionsState:
-			{
-				stateStack.push(optionsState);
-				currentState = optionsState;
-			}
-			break;
-
-		case CGameState::GameStateType::PauseState:
-			stateStack.push(pauseState);
-			currentState = pauseState;
-			break;
-
-		default:
-			//This would be a great place to do a debug assert
-			//Trying to switch to a state that has not been set up yet.
-			break;
-		};
+		stateStack.push(gameStateFactory->getGameState(nextStateType));
 	}
 
 	changeState = false;
@@ -144,14 +96,8 @@ void IStateMachine::HandleStateChanging()
 
 void IStateMachine::ShutDown()
 {
-	delete gamePlayState;
-	delete creditsState;
-	delete loadLevelState;
-	delete mainMenuState;
-	delete optionsState;
-	delete pauseState;
-	delete splashScreenState;
-
+	delete gameStateFactory;
+	gameStateFactory = nullptr;
 
 	delete renderer;
 	renderer = nullptr;
