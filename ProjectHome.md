@@ -1,0 +1,1 @@
+The Lightning Engine is a side project I recently started working on. In theory, when it's complete it should have the ability to run a 2D game.
