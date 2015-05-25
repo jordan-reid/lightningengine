@@ -10,6 +10,10 @@
 #include "../InputManager/InputManager.h"
 #include "../factories/gameStateFactory/GameStateFactory.h"
 
+#include <Windows.h>
+
+#include <iostream>
+
 
 
 IStateMachine::IStateMachine(void)
@@ -33,6 +37,7 @@ void IStateMachine::InitStateMachine()
 	gameStateFactory->InitGameStates();
 
 	stateStack.push(gameStateFactory->getGameState(CGameState::SplashScreenState));
+	currentState = stateStack.top();
 
 	prevState = nullptr;
 
@@ -50,8 +55,30 @@ bool IStateMachine::Input(CInputManager* _InputManager)
 void IStateMachine::Update(void)
 {
 
-	if (GetAsyncKeyState('A'))
-		ChangeState(CGameState::GamePlayState, false);
+	if (GetAsyncKeyState('A') & 0x1)
+	{
+		PushState(CGameState::MainMenuState);
+	}
+
+	if (GetAsyncKeyState('S') & 0x1)
+	{
+		PushState(CGameState::GamePlayState);
+	}
+
+	if (GetAsyncKeyState('D') & 0x1)
+	{
+		PushState(CGameState::PauseState);
+	}
+
+	if (GetAsyncKeyState('F') & 0x1)
+	{
+		PushState(CGameState::OptionsState);
+	}
+
+	if (GetAsyncKeyState('G') & 0x1)
+	{
+		PopState();
+	}
 
 	if (stateStack.size() != 0)
 		stateStack.top()->Update();
@@ -66,11 +93,20 @@ void IStateMachine::Render(void)
 		stateStack.top()->Render();
 }
 
-void IStateMachine::ChangeState(CGameState::GameStateType _nextState, bool _popState)
+void IStateMachine::PushState(CGameState::GameStateType _nextState)
 {
+	if(_nextState == currentState->GetGameStateType())
+		return;
+
 	nextStateType = _nextState;
 	changeState = true;
-	popState = _popState;
+	popState = false;
+}
+
+void IStateMachine::PopState()
+{
+	changeState = true;
+	popState = true;
 }
 
 
@@ -88,7 +124,16 @@ void IStateMachine::HandleStateChanging()
 	{
 		prevState = stateStack.top();
 		stateStack.push(gameStateFactory->getGameState(nextStateType));
+		currentState = stateStack.top();
 	}
+
+	for(unsigned int i = 0; i < stateStack.size(); i++)
+	{
+		std::cout << stateStack._Get_container()[i]->getName();
+		std::cout << "\n";
+	}
+
+	std::cout << "\n\n";
 
 	changeState = false;
 	popState = false;

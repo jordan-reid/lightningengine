@@ -15,6 +15,7 @@
 CCreditsState::CCreditsState(void)
 {
 	SetGameStateType(CreditsState);
+	SetName("Credits State");
 }
 
 

@@ -5,6 +5,7 @@
 CSplashScreen::CSplashScreen(void)
 {
 	SetGameStateType(SplashScreenState);
+	SetName("SplashScreen State");
 }
 
 

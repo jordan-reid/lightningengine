@@ -5,6 +5,7 @@
 CMainMenuState::CMainMenuState(void)
 {
 	SetGameStateType(MainMenuState);
+	SetName("MainMenu State");
 }
 
 

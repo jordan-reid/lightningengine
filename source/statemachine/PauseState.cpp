@@ -5,6 +5,7 @@
 CPauseState::CPauseState(void)
 {
 	SetGameStateType(PauseState);
+	SetName("Pause State");
 }
 
 

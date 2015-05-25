@@ -5,6 +5,7 @@
 CGamePlayState::CGamePlayState(void)
 {
 	SetGameStateType(GamePlayState);
+	SetName("GamePlay State");
 }
 
 

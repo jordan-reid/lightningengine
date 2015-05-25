@@ -5,6 +5,7 @@
 CLoadLevelState::CLoadLevelState(void)
 {
 	SetGameStateType(LoadLevelState);
+	SetName("LoadLevel State");
 }
 
 

@@ -5,6 +5,7 @@
 COptionsState::COptionsState(void)
 {
 	SetGameStateType(OptionsState);
+	SetName("OptionsState State");
 }
 
 

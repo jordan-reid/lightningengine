@@ -111,7 +111,7 @@ public:
 
 	////////////////////////////////////////////////////////////////////
 	//--------------------------------------------------------------- //
-	//Function Name: ChangeState								      //
+	//Function Name: PushState								          //
 	//																  //
 	//Purpose: Tell the StateMachine we need to change state		  //
 	//																  //
@@ -120,12 +120,12 @@ public:
 	//Parameters: 													  //
 	//			CGameState::GameStateType _nextState - Next state to  //
 	//			begine executing									  //
-	//			bool _popState 										  //
-	//				true - we are removing a state from the stack	  //
-	//				false - adding a state to the stack				  //
+	//																  //
 	//--------------------------------------------------------------- //
 	////////////////////////////////////////////////////////////////////
-	void ChangeState(CGameState::GameStateType _nextState, bool _popState = false);
+	void PushState(CGameState::GameStateType _nextState);
+
+	void PopState();
 
 	//Accessors
 	CGameState* GetCurrentState()						{return currentState;};
